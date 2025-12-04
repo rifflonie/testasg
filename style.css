@@ -1,0 +1,779 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* NAVIGATION BAR */
+header.navbar {
+    width: 100%;
+    background: #dd64a9;
+    padding: 8px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Active link */
+.nav-links a.active {
+    color: rgb(255, 255, 255);
+}
+
+/* GENERAL SECTION STYLING */
+.section {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+/* Navbar flex layout */
+header.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* links left/center, toggle right */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dark-toggle {
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dark-toggle:hover {
+    background: #f0cde0;
+}
+
+/* Dark mode styling for button itself */
+body.dark-mode .dark-toggle {
+    background: #b0307c;
+    color: #fff;
+}
+
+body.dark-mode .dark-toggle:hover {
+    background: #dd64a9;
+}
+
+/* Example dark mode global styles */
+body.dark-mode {
+    background: #1c1c1c;
+    color: #e0e0e0;
+}
+
+body.dark-mode header.navbar {
+    background: #333;
+}
+
+/* Dark mode navbar links */
+body.dark-mode .nav-links a {
+    color: #f5f5f5; /* change text to light color */
+}
+
+/* Optional: active link in dark mode */
+body.dark-mode .nav-links a.active {
+    color: #dd64a9; /* or any accent color */
+}
+
+body.dark-mode .about-section {
+    background: #2a2a2a;
+    border-color: #b0307c;
+    color: #f5f5f5;
+}
+
+body.dark-mode .skills span {
+    background: #b0307c;
+    color: #f5f5f5
+}
+
+body.dark-mode .project-card {
+    background: #b0307c;
+}
+
+body.dark-mode .project-card h3,
+body.dark-mode .project-card p {
+    color: #fff;            /* ensure headings and paragraphs are white */
+}
+
+body.dark-mode .project-card:hover {
+    background: #dd64a9;
+}
+
+body.dark-mode .contact-section {
+    background: #2a2a2a;
+    border-color: #b0307c;
+    color: #f5f5f5;
+}
+
+/* Dark mode hero card */
+body.dark-mode .hero-card {
+    background: rgba(40, 40, 40, 0.85);  /* dark semi-transparent */
+    color: #f5f5f5;                     /* make text readable */
+}
+
+body.dark-mode .hero-text h1,
+body.dark-mode .hero-text p {
+    color: #f5f5f5;                     /* heading & tagline in light color */
+}
+
+body.dark-mode .hero-card button {
+    background: #b0307c;
+    color: #fff;
+}
+
+body.dark-mode .hero-card button:hover {
+    background: #dd64a9;
+}
+
+/* Dark mode for work experience boxes */
+body.dark-mode .work-experience li {
+    background: #b0307c;      /* black background */
+    color: #fff;           /* white text for readability */
+    border: 1px solid #333; /* optional subtle border */
+}
+
+body.dark-mode .work-experience li p {
+    color: #fff;           /* ensure paragraph text is white */
+}
+
+/* Dark mode for contact section */
+body.dark-mode .contact-section {
+    background: #222;      /* dark background */
+    border-color: #b0307c; /* adjust border if you have it */
+}
+
+body.dark-mode .contact-section p {
+    color: #fff;
+}
+
+body.dark-mode .contact-section form {
+    background: #b0307c;      /* dark form background */
+    box-shadow: 0 5px 20px rgba(255,255,255,0.1); /* subtle light shadow */
+}
+
+body.dark-mode .contact-section input,
+body.dark-mode .contact-section textarea {
+    background: #ffffff;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+body.dark-mode .contact-section button {
+    background: #dd64a9;
+    color: #fff;
+}
+
+body.dark-mode .contact-section button:hover {
+    background: #e2389e;
+}
+
+/* Dark mode footer */
+body.dark-mode .footer {
+    background: #b0307c;      /* dark background */
+    color: #f5f5f5;        /* light text color */
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height:90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:30px; 
+    background: url("images/evan.jpeg") center/cover no-repeat fixed; /* picture as background */
+}
+
+/* Overlay for contrast */
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.3);
+    backdrop-filter: blur(2px);
+     z-index: 1;
+}
+
+/* Floating Hero Card */
+.hero-card {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 55vh;
+    background: rgba(255, 235, 248, 0.75);
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 2;
+    margin: 0 auto;
+}
+
+/* Hero text left */
+.hero-text {
+    flex: 1;
+    color: #b0307c;
+    text-align: left;
+    z-index: 2;
+}
+
+/* Hero heading */
+.hero-text h1 {
+    font-size: 6rem;
+    font-family: 'Segoe UI';
+    font-weight: 900;
+    margin: 0;
+}
+
+/* Hero tagline */
+.hero-text p {
+    color: #000000;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Hero bio */
+.hero-text .bio {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Hero image right */
+.hero-image {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    max-width: 500px; 
+    background: url("images/evan.jpeg") center/cover no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Button inside hero card */
+.hero-card button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #dd64a9;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero-card button:hover {
+    background: #82326f;
+}
+
+/* --- About Section --- */
+.about-section {
+    background: #f7daed;
+    min-height: 80vh;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: 30px;
+    text-align: center;
+    border: 10px solid #dd64a9; /* optional border to reduce empty space */
+    border-radius: px;
+}
+
+.about-section h2 {
+    font-size: 3rem;
+    font-family: Poppins, "Segoe UI";
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #b0307c;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    max-width: 900px;
+    line-height: 2rem;
+    text-align: center;
+}
+
+/* =================== SKILLS =================== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    max-width: 700px;
+}
+
+.skills h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #b0307c;
+}
+
+.skills span {
+    background: #e3a6c8;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    flex: 0 0 20%;            /* each bubble takes ~20% of row */
+    text-align: center;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+
+/* =================== WORK EXPERIENCE =================== */
+.work-experience {
+    margin-top: 40px;
+    max-width: 900px;
+    text-align: left;
+}
+
+.work-experience h3 {
+    font-size: 1.5rem;
+    color: #b0307c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.work-experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.work-experience li {
+    margin-bottom: 20px;
+    background: #e3a6c8;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.work-experience li p {
+    margin: 5px 0 0 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills span {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .skills h4 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills span {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .skills h4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* =================== PROJECTS SECTION =================== */
+.projects-section {
+    background: url("images/projectbg.jpeg") center/cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 10px 50px;
+    text-align: center;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+/* Overlay to blur background */
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.3); /* optional dark overlay */
+    z-index: 0;
+}
+
+/* Section heading */
+.projects-section h2 {
+    font-size: 3rem;
+    font-family: Poppins, "Segoe UI";
+    font-weight: 800;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Carousel container (centered cards) */
+.project-carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;        /* allow scroll left-right */
+    overflow-y: visible;
+    white-space: nowrap;     /* prevent wrapping */
+    scroll-behavior: smooth; 
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+/* Hide scrollbar for cleaner UI */
+.project-carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+/* Individual project card */
+.project-card {
+    display: inline-block;
+    background: #e3a6c8;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    white-space: normal;
+    cursor: pointer;
+}
+
+.project-card-wrapper {
+    display: inline-block;
+    overflow: visible;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #b0307c;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5rem;
+}
+
+.project-card img {
+    width: 100%;          /* change this to adjust size */
+    height: 250px;        /* adjust height */
+    object-fit: cover;    /* keeps image nicely cropped */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    background: #82326f; /* change color on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.project-card:hover h3,
+.project-card:hover p {
+    color: white;  /* make text readable on new background */
+}
+
+.project-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.project-popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+}
+
+.project-popup-content h3 {
+    margin-bottom: 15px;
+    color: #dd64a9;
+}
+
+.project-popup-content p {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;   /* added for justified text */
+}
+
+#closeProjectPopup {
+    padding: 10px 20px;
+    background: #dd64a9;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#closeProjectPopup:hover {
+    background: #82326f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .project-card {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .project-card {
+        min-width: 250px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        min-width: 200px;
+        padding: 15px;
+    }
+}
+
+/* =================== CONTACT SECTION =================== */
+.contact-section {
+    background: #f7daed;
+    min-height: 100vh;
+    padding: 10px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 10px solid #dd64a9; /* optional border to reduce empty space */
+    border-radius: px;
+}
+
+/* Contact Header */
+.contact-section h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #b0307c;
+    letter-spacing: 2px;
+}
+
+/* Subtitle text */
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 0.1; 
+}
+
+/* Reduce ONLY the gap after the last subtitle */
+.contact-section p:last-of-type {
+    margin-bottom: 30px;   /* Adjust this to your liking */
+}
+
+/* Form Container */
+.contact-section form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ✔ Center all form fields */
+    justify-content: center;
+
+    gap: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Inputs centered properly */
+.contact-section input,
+.contact-section textarea {
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    width: 90%;              /* FULL width inside form */
+    align-self: center;       /* Center the box itself */
+    text-align: left;
+}
+
+.contact-section textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.contact-section button {
+    padding: 14px;
+    background: #dd64a9;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 90%;
+    max-width: 400px;           /* ✔ Button same width as inputs */
+    transition: 0.3s ease;
+}
+
+.contact-section button:hover {
+    background: #82326f;
+}
+
+/* SUCCESS POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 320px;
+    animation: popIn 0.3s ease;
+}
+
+.popup-content h3 {
+    color: #dd64a9;
+    margin-bottom: 10px;
+}
+
+#closePopup {
+    padding: 10px 20px;
+    background: #dd64a9;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#closePopup:hover {
+    background: #82326f;
+}
+
+/* Popup animation */
+@keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* =================== FOOTER =================== */
+.footer {
+    background: #dd64a9  ;
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 900px) {
+    .hero-card {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 70%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .skills {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+section {
+    scroll-margin-top: 120px; /* adjust to match your navbar height */
+}
