@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+
+        <div class="hero-card">
+            <!-- LEFT SIDE: Text -->
+            <div class="hero-text">
+                <h1>Evan Arnold Juinis</h1>
+                <p>Multimedia Computing Student</p>
+                <button id="downloadResume">Download Resume</button>
+
+            </div>
+
+            <!-- RIGHT SIDE: Picture -->
+            <div class="hero-image"></div>
+            </div>
+    </section>
+
+<section id="about" class="about-section">
+    <h2>About Me</h2>
+    <div class="about-text">
+        I am a Computer Science student majoring in Multimedia Computing at UNIMAS. I’m passionate about applying technology to real-world problems. I’ve worked in both service and event environments, gaining strong teamwork, communication, and adaptability skills. I’m eager to keep learning, collaborate with others, and grow as a future IT professional.
+    </div>
+
+    <div class="skills">
+        <h4>Skills</h4>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Microsoft Office</span>
+        <span>UI / UX Design</span>
+        <span>C/C++</span>
+        <span>MySQL</span>
+        <span>Teamwork</span>
+        <span>Adaptability</span>
+        <span>Problem-solving</span>
+    </div>
+
+    <div class="work-experience">
+        <h3>Work Experiences</h3>
+        <ul>
+            <li>
+                <strong>Event Organiser - Exco Logistic</strong> — MPU Outdoor Recreation  
+                <p>‘Jom Bersihkan Pantai’ Community Service Program under MPU 3492 Outdoor Recreation at Pantai Lundu.</p>
+            </li>
+            <li>
+                <strong>Tealive</strong> — Bartender and Cashier (Part-time)  
+                <p>Worked as a bartender and cashier for 1 month, assisting customers and handling transactions.</p>
+            </li>
+            <li>
+                <strong>Chen Wah Restaurant</strong> — Waiter, Cashier, and Stock Clerk (Full-time)  
+                <p>Managed orders, assisted customers, handled cash, and maintained stock in a Chinese restaurant.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+    <!-- PROJECTS SECTION -->
+<section id="projects" class="projects-section">
+    <div class="projects-overlay"></div>
+
+    <h2>Projects</h2>
+
+    <div class="project-carousel">
+
+        <div class="project-card-wrapper">
+            <div class="project-card" data-description="An engaging and interactive math quiz designed to make learning fun and challenging. Built using HTML, CSS, and JavaScript, this quiz features dynamic question generation and instant feedback. Users can test their math skills, track their scores, and enjoy a visually appealing experience with smooth animations and intuitive design.">
+                <img src="images/quiz.png" alt="Project 1=Math Quiz Game">
+                <h3>Math Quiz Game</h3>
+                <p>A fun interactive math quiz built using HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+
+        <div class="project-card-wrapper">
+            <div class="project-card" data-description="A thoughtfully designed mobile UI/UX prototype for the Sarawak Metro Autonomous Rapid Transit (ART) system. This prototype focuses on creating a seamless and intuitive user experience, allowing commuters to easily book rides, receive real-time updates, make payments, and manage settings. Built with a minimalist design approach, it emphasizes clarity, accessibility, and smooth interactions, showcasing how modern mobile interfaces can enhance urban transportation experiences.">
+                <img src="images/art.png" alt="Project 2=ART Ticket Booking App">
+                <h3>ART Ticket Booking App</h3>
+                <p>A mobile UI/UX prototype for the Sarawak Metro ART system.</p>
+            </div>
+        </div>
+
+        <div class="project-card-wrapper">
+            <div class="project-card" data-description="A simple yet effective planner tool designed to help users organize their schedules, tasks, and daily priorities. Built with a clean and intuitive interface, this tool allows users to add, edit, and track tasks easily, providing a streamlined way to manage time and stay productive. Its straightforward design ensures quick accessibility, while interactive features like reminders and task categorization enhance overall usability.">
+                <img src="images/planner.png" alt="Project 3=Study Planner">
+                <h3>Study Planner</h3>
+                <p>A simple planner tool to organize schedules and tasks.</p>
+            </div>
+        </div>
+</div>
+
+    </div>
+
+    <!-- Project Popup -->
+    <div class="project-popup">
+        <div class="project-popup-content">
+            <h3 id="project-title"></h3>
+            <p id="project-desc"></p>
+            <button id="closeProjectPopup">Close</button>
+        </div>
+    </div>
+
+</section>
+
+
+   <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+
+    <p>Feel free to reach out to me for collaborations, inquiries, or opportunities.</p>
+    <p>I’ll get back to you as soon as possible.</p>
+
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- SUCCESS POPUP -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out.</p>
+            <button id="closePopup">OK</button>
+        </div>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <p>© 2025 Evan Arnold Juanis | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
